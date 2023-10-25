@@ -1,2 +1,2 @@
 # promisee
-皆勤完全隊のプロダクトpromisee
+皆勤完全隊
