@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'penalty.dart';
 import 'todoAdd.dart';
+import 'todoDetail.dart';
 
 
 void main() {
@@ -69,9 +70,18 @@ class _TodoListPageState extends State<TodoListPage> {
             child: ListView.builder(
               itemCount: todoList.length,
               itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    title: Text(todoList[index]),
+                return GestureDetector(
+                  onTap: () {
+                    // リストアイテムをタップしたときに詳細画面に遷移
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TodoDetailPage(todoList[index])),
+                    );
+                  },
+                  child: Card(
+                    child: ListTile(
+                      title: Text(todoList[index]),
+                    ),
                   ),
                 );
               },
