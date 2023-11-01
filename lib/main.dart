@@ -34,6 +34,8 @@ class TodoListPage extends StatefulWidget {
 }
 
 class _TodoListPageState extends State<TodoListPage> {
+  List<String> todoList = [];
+
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -42,7 +44,7 @@ class _TodoListPageState extends State<TodoListPage> {
         title: Text('Promisee'),
         ),
       // データを元にListViewを作成
-        body: Row(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             TextButton(
@@ -63,16 +65,39 @@ class _TodoListPageState extends State<TodoListPage> {
               },
               child: Text('失敗'),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TodoAddPage()),
-                );
-              },
-              child: Text('追加'),
+            Expanded(
+              child: ListView.builder(
+                itemCount: todoList.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: ListTile(
+                      title: Text(todoList[index]),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () async {
+            // "push"で新規画面に遷移
+            // リスト追加画面から渡される値を受け取る
+            final newListText = await Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) {
+                // 遷移先の画面としてリスト追加画面を指定
+                return TodoAddPage();
+              }),
+            );
+            if (newListText != null) {
+              // キャンセルした場合は newListText が null となるので注意
+              setState(() {
+                // リスト追加
+                todoList.add(newListText);
+              });
+            }
+          },
+          child: Icon(Icons.add),
         ),
       );
     }
