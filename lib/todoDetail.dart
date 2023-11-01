@@ -17,7 +17,7 @@ class TodoDetailPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Todoの詳細情報:',
+              '約束の詳細情報:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
@@ -30,7 +30,7 @@ class TodoDetailPage extends StatelessWidget {
                 // "pop"で前の画面に戻る
                 Navigator.of(context).pop();
               },
-              child: Text('成功'),
+              child: Text('約束を守れた！'),
             ),
             TextButton(
               onPressed: () {
@@ -39,7 +39,7 @@ class TodoDetailPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => PenaltyPage()),
                 );
               },
-              child: Text('失敗'),
+              child: Text('約束を守れなかった...'),
             ),
           ],
         ),
