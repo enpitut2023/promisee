@@ -14,7 +14,7 @@ class _TodoAddPageState extends State<TodoAddPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('リスト追加'),
+        title: Text('約束を追加'),
       ),
       body: Container(
         // 余白を付ける
@@ -47,7 +47,7 @@ class _TodoAddPageState extends State<TodoAddPage> {
                   // "pop"の引数から前の画面にデータを渡す
                   Navigator.of(context).pop(_text);
                 },
-                child: Text('リスト追加', style: TextStyle(color: Colors.white)),
+                child: Text('約束追加', style: TextStyle(color: Colors.white)),
               ),
             ),
             const SizedBox(height: 8),

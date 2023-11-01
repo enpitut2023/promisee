@@ -10,7 +10,7 @@ class TodoDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Todoの詳細'),
+        title: Text('約束の詳細'),
       ),
       body: Center(
         child: Column(
