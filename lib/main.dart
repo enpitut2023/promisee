@@ -48,23 +48,9 @@ class _TodoListPageState extends State<TodoListPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PenaltyPage()),
-              );
-            },
-            child: Text('成功'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PenaltyPage()),
-              );
-            },
-            child: Text('失敗'),
+          Text(
+            '約束リスト:',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           Expanded(
             child: ListView.builder(
