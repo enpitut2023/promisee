@@ -9,6 +9,7 @@ void main() {
   runApp(MyTodoApp());
 }
 
+// アプリ全体のデザイン
 class MyTodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class MyTodoApp extends StatelessWidget {
   }
 }
 
+// 画面のデザイン
 // リスト一覧画面用Widget
 class TodoListPage extends StatefulWidget {
   @override

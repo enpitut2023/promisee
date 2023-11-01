@@ -36,7 +36,7 @@ class TodoDetailPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PenaltyPage()),
+                  MaterialPageRoute(builder: (context) => RoulettePage()),
                 );
               },
               child: Text('約束を守れなかった...'),

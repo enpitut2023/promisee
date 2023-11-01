@@ -1,37 +1,23 @@
-import 'penalty.dart';
+import 'package:flutter/material.dart';
 
-
-class JudgePage extends StatelessWidget {
+class PenaltyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // AppBarを表示し、タイトルも設定
       appBar: AppBar(
-        title: Text('Promisee'),
+        title: Text('Penalty'),
       ),
-      // データを元にListViewを作成
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PenaltyPage()),
-              );
-            },
-            child: Text('成功'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => PenaltyPage()),
-              );
-            },
-            child: Text('失敗'),
-          ),
-        ],
+      body: Container(
+          child: Center(
+            child: Text(
+              'ペナルティー',
+              style: TextStyle(
+                fontSize: 40,
+              ),
+
+            ),
+
+          )
       ),
     );
   }
