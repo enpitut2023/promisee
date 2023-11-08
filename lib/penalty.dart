@@ -27,6 +27,8 @@ class _RoulettePageState extends State<RoulettePage> with SingleTickerProviderSt
     textBuilder: (index) => values[index],
     textStyleBuilder: (index) {
     // Customize text style, don't forget to return it
+      // テキストスタイルをカスタマイズする
+      return TextStyle(fontSize: 20, color: Colors.white); // 20はフォントサイズ
     },
     );
     //ルーレットコントローラ
@@ -74,11 +76,10 @@ class _RoulettePageState extends State<RoulettePage> with SingleTickerProviderSt
                   //結果（チョコ）画面へ遷移
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const ResultPage(),
+                      MaterialPageRoute(builder: (context) => ResultPage(),
                       ));
                 } ,
-                child: const Text("受け取ってね！",
-                ),
+                child: const Text('スタート'),
               ),
             ],
           ),
